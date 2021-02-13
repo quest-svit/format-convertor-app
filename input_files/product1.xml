@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="PO4">
+    <description>Let Us C</description>
+    <imageUrl>https://springframework.guru/wp-content/uploads/2015/04/spring_framework_guru_shirt-rf412049699c14ba5b68bb1c09182bfa2_8nax2_512.jpg</imageUrl>
+    <price>495</price>
+    <createdBy>
+        <email>Yashwant@Kanitkar.com</email>
+        <id>10</id>
+        <name>Yashwant Kanitkar</name>
+    </createdBy>
+</product>
