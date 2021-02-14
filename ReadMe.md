@@ -1,4 +1,4 @@
-## Format Convertor Application
+# Format Convertor Application
 
 This is a simple SpringBoot Application to convert from XML to JSON and vice-versa.
 
@@ -9,20 +9,23 @@ This is a simple SpringBoot Application to convert from XML to JSON and vice-ver
 * It uses Thymeleaf to provide GUI interface.
 
 
-###Usages
+### Usages
 1. Browser : http://localhost:8080
 2. Using cURL (on Unix Systems)
 3. Read from files (Refer Test case-UtilTest for example)
 
 
-###Browser Example
-####Convert XML to JSON
+## Browser Example
+
+#### Convert XML to JSON
 ![alt text](demo/xmlToJson.png)
-####Convert JSON to XML:
+
+#### Convert JSON to XML:
 ![alt text](demo/JsonToXML.png)
 
-###cURL
-####Convert XML to JSON
+## cURL Example
+#### Convert XML to JSON
+
 `curl -X POST  --header "Content-Type:text/xml;charset=UTF-8"  --data '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <product id="PO3">
     <description>Balagururswamy</description>
@@ -38,8 +41,7 @@ Output:
 ![alt text](demo/curl-xmlToJson.png)
 
 
-####Convert JSON to XML:
-Run this command:
+#### Convert JSON to XML:
 
 `curl -X POST  --header "Content-Type:application/json"  --data '{"product": {
     "createdBy": {
