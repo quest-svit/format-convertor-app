@@ -3,56 +3,46 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.dange.tanmay</groupId>
-  <artifactId>myapp</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>format-convertor</artifactId>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
-
-  <name>myapp</name>
-  <url>http://maven.apache.org</url>
+  <name>format-convertor</name>
+  <url>http://localhost:8080</url>
+  <description>This is a simple SpringBoot Application to convert from XML to JSON and JSON to XML</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <version>2.4.2</version>
+  </parent>
+
   <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.4</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
       <version>20171018</version>
     </dependency>
-
     <dependency>
-      <groupId>org.mongodb</groupId>
-      <artifactId>mongodb-driver</artifactId>
-      <version>3.9.0</version>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.6.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.xson</groupId>
-      <artifactId>tangyuan-mongo-datasource</artifactId>
-      <version>1.2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.xson</groupId>
-      <artifactId>tangyuan-mongo</artifactId>
-      <version>1.2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.16</version>
-    </dependency>
-
   </dependencies>
 </project>

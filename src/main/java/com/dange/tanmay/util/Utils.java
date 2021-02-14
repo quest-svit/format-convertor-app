@@ -1,12 +1,11 @@
-package com.dange.tanmay.myapp.util;
+package com.dange.tanmay.util;
 
-import com.mongodb.client.MongoCollection;
-import org.bson.Document;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Utils {
@@ -34,7 +33,7 @@ public class Utils {
         return map;
     }
 
-    private static Object convert(Object value) {
+    private static Object convert(Object value) throws JSONException {
         if (value instanceof JSONArray) {
            return toList((JSONArray) value);
         } else if (value instanceof JSONObject) {
@@ -42,7 +41,7 @@ public class Utils {
         }
         return value;
     }
-    public static StringBuffer readFile(String filename)  {
+    public static StringBuffer readFile(String filename) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(filename));
         sc.useDelimiter("\\Z");// we just need to use \\Z as delimiter
         StringBuffer sb = new StringBuffer(sc.next());
@@ -50,15 +49,9 @@ public class Utils {
         return sb;
     }
 
-    public static void save(JSONObject xmlJSONObj) {
-        MongoCollection<Document> collection = DBOperations.getCollection();
-        print(xmlJSONObj);
-        Document document = new Document(Utils.jsonToMap(xmlJSONObj));
-        collection.insertOne(document);
-    }
 
-    public static void print(JSONObject xmlJSONObj) {
-        System.out.println(xmlJSONObj.toString(PRETTY_PRINT_INDENT_FACTOR));
+    public static String prettyPrint(JSONObject xmlJSONObj) throws JSONException {
+        return xmlJSONObj.toString(PRETTY_PRINT_INDENT_FACTOR);
     }
 
 

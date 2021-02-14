@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "ISO-8859-1" />
+    <link href = "css/styles.css" rel = "stylesheet"/>
+    <title>Spring Boot Application</title>
+
+    <script>
+        function myFunction() {
+          var xhr = new XMLHttpRequest();
+          if (document.getElementById("xml").checked == true)
+              {  var url = "/convertXML";}
+          if (document.getElementById("json").checked == true)
+              {  var url = "/convert";}
+          xhr.open("POST", url, true);
+          xhr.setRequestHeader("Content-Type", "text/xml;charset=UTF-8");
+          xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              if (document.getElementById("json").checked == true){
+              document.getElementById("result").innerHTML = this.responseText;}
+              if (document.getElementById("xml").checked == true){
+              document.getElementById("result").innerHTML = htmlEntities(this.responseText);}
+
+            }
+          };
+          var data = document.getElementById("inputData").value;
+          xhr.send(data);
+        }
+
+        function htmlEntities(str) {
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+    </script>
+</head>
+<body>
+
+<h1>Format Convertor</h1>
+<div>
+    <p>Please select your target format:</p>
+    <input type="radio" id="xml" name="format" value="xml">
+    <label for="xml">XML</label><br>
+    <input type="radio" id="json" name="format" value="json">
+    <label for="json">JSON</label><br>
+    <textarea id="inputData" form="usrform" cols="60" rows="17">Enter XML to convert to JSON here..\n OR \n JSON to Convert to XML.</textarea>
+    <input type="submit" onclick="myFunction()">
+</div>
+<div>
+    <p>Result:</p>
+    <textarea id="result" cols="60" rows="17" >Result will be displayed here</textarea>
+</div>
+
+
+</body>
+</html>
